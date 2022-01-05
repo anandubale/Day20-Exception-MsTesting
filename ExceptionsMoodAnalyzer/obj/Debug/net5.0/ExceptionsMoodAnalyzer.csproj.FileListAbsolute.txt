@@ -1,0 +1,16 @@
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\bin\Debug\net5.0\ExceptionsMoodAnalyzer.exe
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\bin\Debug\net5.0\ExceptionsMoodAnalyzer.deps.json
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\bin\Debug\net5.0\ExceptionsMoodAnalyzer.runtimeconfig.json
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\bin\Debug\net5.0\ExceptionsMoodAnalyzer.runtimeconfig.dev.json
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\bin\Debug\net5.0\ExceptionsMoodAnalyzer.dll
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\bin\Debug\net5.0\ref\ExceptionsMoodAnalyzer.dll
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\bin\Debug\net5.0\ExceptionsMoodAnalyzer.pdb
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\obj\Debug\net5.0\ExceptionsMoodAnalyzer.csproj.AssemblyReference.cache
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\obj\Debug\net5.0\ExceptionsMoodAnalyzer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\obj\Debug\net5.0\ExceptionsMoodAnalyzer.AssemblyInfoInputs.cache
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\obj\Debug\net5.0\ExceptionsMoodAnalyzer.AssemblyInfo.cs
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\obj\Debug\net5.0\ExceptionsMoodAnalyzer.csproj.CoreCompileInputs.cache
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\obj\Debug\net5.0\ExceptionsMoodAnalyzer.dll
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\obj\Debug\net5.0\ref\ExceptionsMoodAnalyzer.dll
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\obj\Debug\net5.0\ExceptionsMoodAnalyzer.pdb
+C:\Users\anand\Desktop\ExceptionsMoodAnalyzer\ExceptionsMoodAnalyzer\obj\Debug\net5.0\ExceptionsMoodAnalyzer.genruntimeconfig.cache
