@@ -25,5 +25,45 @@ namespace TestProject1ExceptionMoodAnalyzer
 
 
         }
+        //Test Case 3.2 Given empty Mood should throw MoodException indicating Empty Mood.
+        //Given-When-Then
+        [TestMethod]
+        public void Given_Empty_Should_Throw_MoodAnalysisException_Indication_EmptyMood()
+        {
+
+            try
+            {
+                string message = "";
+                MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message);
+                string mood = moodAnalyzer.AnalyzeMood();
+
+            }
+            catch (ExceptionTest e)
+            {
+                Assert.AreEqual("Mood Should not be Empty", e.Message);
+            }
+        }
+        //it passes expected == e.message
+
+        //Test Case 3.3 Given Null Mood should throw MoodException indicating Null Mood.
+        //Given-When-Then
+        [TestMethod]
+        public void Given_Null_Should_Throw_MoodAnalysisException_Indication_NullMood()
+        {
+
+            try
+            {
+                string message = null;
+                MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message);
+                string mood = moodAnalyzer.AnalyzeMood();
+
+            }
+            catch (ExceptionTest e)
+            {
+                Assert.AreEqual("Mood Should Not Be NULL", e.Message);
+            }
+        }
     }
+
+
 }

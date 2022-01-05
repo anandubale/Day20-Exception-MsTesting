@@ -20,6 +20,10 @@ namespace ExceptionsMoodAnalyzer
         {
             try
             {
+                if (this.message.Equals(string.Empty))
+                {
+                    throw new ExceptionTest(ExceptionTest.ExceptionType.EMPTY_MESSAGE, "Mood Should not be Empty");
+                }
                 if (this.message.Contains("Sad"))
                 {
                     return "SAD";
@@ -29,9 +33,9 @@ namespace ExceptionsMoodAnalyzer
                     return "HAPPY";
                 }
             }
-            catch 
+            catch (NullReferenceException)
             {
-                return "HAPPY";
+                throw new ExceptionTest(ExceptionTest.ExceptionType.NULL_MESSAGE, "Mood Should Not Be NULL");
             }
         }
 
