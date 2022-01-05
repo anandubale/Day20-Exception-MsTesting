@@ -7,11 +7,13 @@ namespace TestProject1ExceptionMoodAnalyzer
     public class UnitTest1
     {
         [TestMethod]
-        public void GivenSadMoodShouldReturnSad()
+        [DataRow(null)]   //give null input to class(string message ==> null)
+        public void GivenSadMoodShouldReturnSad(string message)
         {
             //Arrange
+
             string expected = "HAPPY"; //
-            string message = "I am in Happy Mood";
+            //string message = "I am in Happy Mood";
             MoodAnalyzer moodAnalyze = new MoodAnalyzer(message); //create instance or object of that class.
 
 
