@@ -10,7 +10,41 @@ using System.Text.RegularExpressions;
 namespace ExceptionsMoodAnalyzer
 {
     public class MoodAnalyzerFactory
-    {   
+    {       
+
+        public static object CreateMoodAnalyzerWithParameterizedConstructor(string Classname,string ConstructorName,string message)
+        {
+
+            Type type = typeof(MoodAnalyzer);
+            if(type.Name.Equals(Classname) || type.FullName.Equals(Classname))
+            {
+                if (type.Name.Equals(ConstructorName))
+                {
+                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
+                    Object instance = ctor.Invoke(new object[] { "HAPPY" });
+                    return instance;
+                }
+                else
+                {
+                    throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_METHOD, "Constructor Not Found");
+
+                }
+            }
+            else
+            {
+                throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_CLASS, "Class Not Found");
+
+            }
+
+
+        }
+
+
+
+
+
+
+        //For UC4
         public static object CreateMoodAnalyse(String ClassName, String constructorName)
         {
             string pattern = @"." + constructorName + "$";
