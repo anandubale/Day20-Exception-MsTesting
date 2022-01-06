@@ -8,11 +8,16 @@ namespace ExceptionsMoodAnalyzer
 {
     public class MoodAnalyzer // class with contructor and method which return some string.
     {
-        private string message;
-
+        public string message;
+       
         public MoodAnalyzer(string Message)
         {
             this.message = Message;
+
+        }   
+        //I have added This Constructr to avoid NO paramerterizerd Constrctor.
+        public MoodAnalyzer()
+        {
 
         }
 

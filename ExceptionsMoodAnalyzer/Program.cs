@@ -7,10 +7,7 @@ namespace ExceptionsMoodAnalyzer
         static void Main(string[] args)
         {
 
-                
-
-
-
+            Console.WriteLine("Hello Worlds!");
 
         }
     }

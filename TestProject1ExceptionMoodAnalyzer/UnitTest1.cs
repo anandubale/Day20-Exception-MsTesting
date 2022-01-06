@@ -63,7 +63,22 @@ namespace TestProject1ExceptionMoodAnalyzer
                 Assert.AreEqual("Mood Should Not Be NULL", e.Message);
             }
         }
+
+
+        [TestMethod]
+        public void Given_Mood_Analsis_Class_Name_Should_return_Object()
+        {
+            string message = null;
+            object expected = new MoodAnalyzer(message);
+            object obj = MoodAnalyzerFactory.CreateMoodAnalyse("ExceptionsMoodAnalyzer.MoodAnalyzer", "MoodAnalyzer");
+            //To check object we have created are same or not
+
+            expected.Equals(obj);
+
+
+            //NOT CHECKING STRING ARE eQUAL OR NOT 
+           //Assert.AreEqual(expected, obj);
+        }
+
     }
-
-
 }
