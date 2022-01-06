@@ -64,7 +64,7 @@ namespace TestProject1ExceptionMoodAnalyzer
             }
         }
 
-
+        //Test Case 4.1
         [TestMethod]
         public void Given_Mood_Analsis_Class_Name_Should_return_Object()
         {
@@ -77,7 +77,20 @@ namespace TestProject1ExceptionMoodAnalyzer
 
 
             //NOT CHECKING STRING ARE eQUAL OR NOT 
-           //Assert.AreEqual(expected, obj);
+            //Assert.AreEqual(expected, obj);
+        }
+        //TestCase 5.1
+
+        [TestMethod]
+        public void Given_Mood_Analsis_Class_Name_Should_return_Object_using_Parameterized_Consrtuctor()
+        {
+
+            object expected = new MoodAnalyzer("HAPPY");
+            object obj = MoodAnalyzerFactory.CreateMoodAnalyzerWithParameterizedConstructor("ExceptionsMoodAnalyzer.MoodAnalyzer", "MoodAnalyzer", "Happy");
+            //To check object we have created are same or not
+
+            expected.Equals(obj);
+
         }
 
     }
