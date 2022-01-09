@@ -21,26 +21,34 @@ namespace ExceptionsMoodAnalyzer
 
         }
 
-        public string AnalyzeMood()
+        public string AnalyseMood()
         {
             try
             {
                 if (this.message.Equals(string.Empty))
                 {
-                    throw new ExceptionTest(ExceptionTest.ExceptionType.EMPTY_MESSAGE, "Mood Should not be Empty");
+                    throw new ExceptionTest(ExceptionTest.ExceptionType.EMPTY_MESSAGE, "Mood should not be empty");
                 }
                 if (this.message.Contains("Sad"))
                 {
                     return "SAD";
                 }
-                else
+                else if (this.message.Contains("Happy"))
                 {
                     return "HAPPY";
+                }
+                else if (this.message.Contains("Any"))
+                {
+                    return "HAPPY";
+                }
+                else
+                {
+                    return "Happy";
                 }
             }
             catch (NullReferenceException)
             {
-                throw new ExceptionTest(ExceptionTest.ExceptionType.NULL_MESSAGE, "Mood Should Not Be NULL");
+                throw new ExceptionTest(ExceptionTest.ExceptionType.NULL_MESSAGE, "Message should not be null");
             }
         }
 

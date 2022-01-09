@@ -89,8 +89,17 @@ namespace TestProject1ExceptionMoodAnalyzer
             object obj = MoodAnalyzerFactory.CreateMoodAnalyzerWithParameterizedConstructor("ExceptionsMoodAnalyzer.MoodAnalyzer", "MoodAnalyzer", "Happy");
             //To check object we have created are same or not
 
-            expected.Equals(obj);
+            expected.Equals(obj); 
 
+        }
+
+        [TestMethod]
+
+        public void GiveHappyMoodShouldReturnHappy()
+        {
+            string expected = "HAPPY";
+            string mood = MoodAnalyzerFactory.InvokeAnalyseMood("Happy", "AnalyseMood");
+            Assert.AreEqual(expected, mood);
         }
 
     }
