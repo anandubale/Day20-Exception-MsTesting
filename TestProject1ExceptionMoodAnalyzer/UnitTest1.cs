@@ -92,7 +92,8 @@ namespace TestProject1ExceptionMoodAnalyzer
             expected.Equals(obj); 
 
         }
-
+            
+        //TestCase 6.1
         [TestMethod]
 
         public void GiveHappyMoodShouldReturnHappy()
@@ -101,6 +102,19 @@ namespace TestProject1ExceptionMoodAnalyzer
             string mood = MoodAnalyzerFactory.InvokeAnalyseMood("Happy", "AnalyseMood");
             Assert.AreEqual(expected, mood);
         }
+
+
+        //TestCase 7.1
+
+        [TestMethod]
+        public void Given_HAPPYMessag_WithReflector_should_ReturnHAPPY()
+        {
+            string result = MoodAnalyzerFactory.SetField("HAPPY", "message");
+            Assert.AreEqual("HAPPY", result);
+        }
+
+
+
 
     }
 }

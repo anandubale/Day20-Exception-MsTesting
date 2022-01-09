@@ -11,6 +11,7 @@ namespace ExceptionsMoodAnalyzer
 {
     public class MoodAnalyzerFactory
     {
+
         public static object CreateMoodAnalyse(string className, string constructorName)
         {
             string pattern = @"." + constructorName + "$";
@@ -33,14 +34,33 @@ namespace ExceptionsMoodAnalyzer
                 throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_METHOD, "Constructor is Not Found");
             }
         }
-
-
+        public static object CreateMoodAnalyserUsingParameterizedConstructor(string className, string constructorName, string message)
+        {
+            Type type = typeof(MoodAnalyzer);
+            if (type.Name.Equals(className) || type.FullName.Equals(className))
+            {
+                if (type.Name.Equals(constructorName))
+                {
+                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
+                    object instance = ctor.Invoke(new object[] { message });
+                    return instance;
+                }
+                else
+                {
+                    throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_METHOD, "Constructor is not Found");
+                }
+            }
+            else
+            {
+                throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_CLASS, "Class Not Found ");
+            }
+        }
         public static string InvokeAnalyseMood(string message, string methodName)
         {
             try
             {
                 Type type = Type.GetType("MoodAnalyser.MoodAnalysers");
-                object moodAnalyserObject = MoodAnalyzerFactory.CreateMoodAnalyzerWithParameterizedConstructor("MoodAnalyser.MoodAnalysers", "MoodAnalysers", message);
+                object moodAnalyserObject = MoodAnalyzerFactory.CreateMoodAnalyserUsingParameterizedConstructor("MoodAnalyser.MoodAnalysers", "MoodAnalysers", message);
                 MethodInfo AnalseMoodInfo = type.GetMethod(methodName);
                 object mood = AnalseMoodInfo.Invoke(moodAnalyserObject, null);
                 return mood.ToString();
@@ -50,40 +70,31 @@ namespace ExceptionsMoodAnalyzer
                 throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_METHOD, "Method is Not Found");
             }
         }
-
-
-        //UC 5
-
-        public static object CreateMoodAnalyzerWithParameterizedConstructor(string Classname,string ConstructorName,string message)
+        public static string SetField(string message, string fieldName)
         {
-
-            Type type = typeof(MoodAnalyzer);
-            if(type.Name.Equals(Classname) || type.FullName.Equals(Classname))
+            try
             {
-                if (type.Name.Equals(ConstructorName))
+                MoodAnalyzer MoodAnalysers = new MoodAnalyzer();
+                Type type = typeof(MoodAnalyzer);
+                FieldInfo field = type.GetField(fieldName, BindingFlags.Public | BindingFlags.Instance);
+                if (message == null)
                 {
-                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
-                    Object instance = ctor.Invoke(new object[] { "HAPPY" });
-                    return instance;
+                    throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_FIELDS, "Message should not be null");
                 }
-                else
-                {
-                    throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_METHOD, "Constructor Not Found");
-
-                }
+                field.SetValue(MoodAnalysers, message);
+                return message;
             }
-            else
+            catch (NullReferenceException)
             {
-                throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_CLASS, "Class Not Found");
-
+                throw new ExceptionTest(ExceptionTest.ExceptionType.NO_SUCH_FIELDS, "Field is Not Found");
             }
-
 
         }
+    }
 
 
 
-
+}
 
 
 
@@ -93,5 +104,5 @@ namespace ExceptionsMoodAnalyzer
 
 
         
-    }
-} 
+    
+
